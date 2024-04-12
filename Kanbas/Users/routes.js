@@ -50,6 +50,7 @@ export default function UserRoutes(app) {
     if (currentUser) {
       req.session["currentUser"] = currentUser;
       res.json(currentUser);
+      console.log('after signin-',req.session["currentUser"]);
     } else {
       res.sendStatus(401);
     }
