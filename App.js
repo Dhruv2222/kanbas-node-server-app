@@ -25,14 +25,16 @@ const sessionOptions = {
     resave: false,
     saveUninitialized: false,
   };
+  console.log("Above-", process.env.NODE_ENV);
   if (process.env.NODE_ENV !== "development") {
+    console.log("non dev env");
     sessionOptions.proxy = true;
     sessionOptions.cookie = {
       sameSite: "none",
       secure: true,
       domain: process.env.HTTP_SERVER_DOMAIN,
     };
-    console.log("non dev env");
+    
   }
   app.use(session(sessionOptions));
   
