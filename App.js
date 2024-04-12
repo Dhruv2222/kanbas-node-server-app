@@ -32,6 +32,7 @@ const sessionOptions = {
       secure: true,
       domain: process.env.HTTP_SERVER_DOMAIN,
     };
+    console.log("non dev env");
   }
   app.use(session(sessionOptions));
   
